@@ -10,6 +10,10 @@ const Index = function() {
                 <div>@import <span className="text-blue-500">'{process.env.DOMAIN}/stylesheets/noto-sans-mono-400.css'</span>;</div>
                 <div>@import <span className="text-blue-500">'{process.env.DOMAIN}/stylesheets/noto-serif-400-italic.css'</span>;</div>
                 <div>@import <span className="text-blue-500">'{process.env.DOMAIN}/stylesheets/noto-serif-400.css'</span>;</div>
+                <div>@import <span className="text-blue-500">'{process.env.DOMAIN}/stylesheets/noto-serif-500-italic.css'</span>;</div>
+                <div>@import <span className="text-blue-500">'{process.env.DOMAIN}/stylesheets/noto-serif-500.css'</span>;</div>
+                <div>@import <span className="text-blue-500">'{process.env.DOMAIN}/stylesheets/noto-serif-600-italic.css'</span>;</div>
+                <div>@import <span className="text-blue-500">'{process.env.DOMAIN}/stylesheets/noto-serif-600.css'</span>;</div>
             </code>
             <p>...or you can import everything per family:</p>
             {/* prettier-ignore */}
