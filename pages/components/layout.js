@@ -19,4 +19,4 @@ const Layout = function({ children }) {
     )
 }
 
-export { Layout }
+export default Layout
