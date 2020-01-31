@@ -10,7 +10,7 @@ const Layout = function({ children }) {
                 <link rel="stylesheet" href="/stylesheets/noto-sans-mono.css" />
                 <link rel="stylesheet" href="/stylesheets/noto-serif.css" />
             </Head>
-            {children}
+            <div className="container mx-auto px-4">{children}</div>
             <style jsx global>{`
                 body {
                     font-family: 'Noto Serif';
@@ -18,6 +18,11 @@ const Layout = function({ children }) {
 
                 code {
                     font-family: 'Noto Sans Mono';
+                }
+
+                * + code,
+                * + p {
+                    margin-top: 1rem;
                 }
             `}</style>
         </div>
