@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Noto Sans Hebrew';
+    src: url('/fonts/noto-sans-hebrew-700.woff2') format('woff2'),
+        url('/fonts/noto-sans-hebrew-700.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+    font-display: auto;
+    unicode-range: U+0590-05FF;
+}

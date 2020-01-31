@@ -21,6 +21,12 @@ const Layout = function({ children }) {
                 />
                 <link
                     rel="preload"
+                    href="/stylesheets/noto-sans-hebrew.css"
+                    as="style"
+                    onload="this.onload=null; this.rel='stylesheet'"
+                />
+                <link
+                    rel="preload"
                     href="/stylesheets/noto-sans-mono.css"
                     as="style"
                     onload="this.onload=null; this.rel='stylesheet'"
@@ -28,6 +34,12 @@ const Layout = function({ children }) {
                 <link
                     rel="preload"
                     href="/stylesheets/noto-serif.css"
+                    as="style"
+                    onload="this.onload=null; this.rel='stylesheet'"
+                />
+                <link
+                    rel="preload"
+                    href="/stylesheets/noto-serif-hebrew.css"
                     as="style"
                     onload="this.onload=null; this.rel='stylesheet'"
                 />
@@ -39,8 +51,16 @@ const Layout = function({ children }) {
                     font-family: 'Noto Serif';
                 }
 
+                .font-noto-serif-hebrew {
+                    font-family: 'Noto Serif Hebrew', 'Noto Serif';
+                }
+
                 .font-noto-sans {
                     font-family: 'Noto Sans';
+                }
+
+                .font-noto-sans-hebrew {
+                    font-family: 'Noto Sans Hebrew', 'Noto Sans';
                 }
 
                 code,
