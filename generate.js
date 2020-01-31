@@ -5,6 +5,7 @@ const weights = [100, 200, 300, 400, 500, 600, 700, 800, 900]
 
 const faces = [
     { name: 'Noto Sans Mono', file: 'noto-sans-mono', hasItalic: false },
+    { name: 'Noto Sans', file: 'noto-sans', hasItalic: true },
     { name: 'Noto Serif', file: 'noto-serif', hasItalic: true },
 ]
 
