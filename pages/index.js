@@ -1,4 +1,36 @@
+import React, { Fragment } from 'react'
 import Layout from './components/layout'
+
+const importSizes = [100, 200, 300, 400, 500, 600]
+
+const sampleSizes = [
+    { weight: 100, name: 'hairline' },
+    { weight: 200, name: 'thin' },
+    { weight: 300, name: 'light' },
+    { weight: 400, name: 'normal' },
+    { weight: 500, name: 'medium' },
+    { weight: 600, name: 'semibold' },
+]
+
+Array.prototype.firstThree = function() {
+    return this.slice(0, 3)
+}
+
+Array.prototype.secondThree = function() {
+    return this.slice(3, 6)
+}
+
+Array.prototype.lastThree = function() {
+    return this.slice(6, 9)
+}
+
+Array.prototype.firstSix = function() {
+    return this.slice(0, 6)
+}
+
+Array.prototype.secondSix = function() {
+    return this.slice(3, 9)
+}
 
 const Index = function() {
     return (
@@ -20,15 +52,17 @@ const Index = function() {
                         There are quite a few...
                     </summary>
                     <div className="mt-2">
-                        <div className="whitespace-no-wrap">@import <span className="text-blue-500">'{process.env.DOMAIN}/stylesheets/noto-sans-mono-400.css'</span>;</div>
-                        <div className="whitespace-no-wrap">@import <span className="text-blue-500">'{process.env.DOMAIN}/stylesheets/noto-sans-mono-500.css'</span>;</div>
-                        <div className="whitespace-no-wrap">@import <span className="text-blue-500">'{process.env.DOMAIN}/stylesheets/noto-sans-mono-600.css'</span>;</div>
-                        <div className="whitespace-no-wrap">@import <span className="text-blue-500">'{process.env.DOMAIN}/stylesheets/noto-serif-400-italic.css'</span>;</div>
-                        <div className="whitespace-no-wrap">@import <span className="text-blue-500">'{process.env.DOMAIN}/stylesheets/noto-serif-400.css'</span>;</div>
-                        <div className="whitespace-no-wrap">@import <span className="text-blue-500">'{process.env.DOMAIN}/stylesheets/noto-serif-500-italic.css'</span>;</div>
-                        <div className="whitespace-no-wrap">@import <span className="text-blue-500">'{process.env.DOMAIN}/stylesheets/noto-serif-500.css'</span>;</div>
-                        <div className="whitespace-no-wrap">@import <span className="text-blue-500">'{process.env.DOMAIN}/stylesheets/noto-serif-600-italic.css'</span>;</div>
-                        <div className="whitespace-no-wrap">@import <span className="text-blue-500">'{process.env.DOMAIN}/stylesheets/noto-serif-600.css'</span>;</div>
+                        {importSizes.firstSix().map(weight => 
+                            <div className="whitespace-no-wrap" key={`sans-mono-${weight}`}>
+                                @import <span className="text-blue-500">'{process.env.DOMAIN}/stylesheets/noto-sans-mono-{weight}.css'</span>;
+                            </div>
+                        )}
+                        {importSizes.secondThree().map(weight => 
+                            <Fragment key={`serif-${weight}`}>
+                                <div className="whitespace-no-wrap">@import <span className="text-blue-500">'{process.env.DOMAIN}/stylesheets/noto-serif-{weight}.css'</span>;</div>
+                                <div className="whitespace-no-wrap">@import <span className="text-blue-500">'{process.env.DOMAIN}/stylesheets/noto-serif-{weight}-italic.css'</span>;</div>
+                            </Fragment>
+                        )}
                     </div>
                 </details>
             </code>
@@ -54,37 +88,34 @@ const Index = function() {
                     <summary>There are quite a few...</summary>
                     <div className="mt-2">
                         <div>
-                            <span className="inline-flex w-1/2 sm:w-1/3 md:w-1/6 font-noto-sans-mono font-normal">
-                                Mono-400
-                            </span>
-                            <span className="inline-flex w-1/2 sm:w-1/3 md:w-1/6 font-noto-sans-mono font-medium">
-                                Mono-500
-                            </span>
-                            <span className="inline-flex w-1/2 sm:w-1/3 md:w-1/6 font-noto-sans-mono font-semibold">
-                                Mono-600
-                            </span>
+                            {sampleSizes.firstSix().map(({ weight, name }) => (
+                                <span
+                                    className={`inline-flex w-1/2 sm:w-1/3 md:w-1/6 font-noto-sans-mono font-${name}`}
+                                    key={`sans-mono-${weight}`}
+                                >
+                                    Sans-Mono-{weight}
+                                </span>
+                            ))}
                         </div>
                         <div className="mt-2">
-                            <span className="inline-flex w-1/2 sm:w-1/3 md:w-1/6 font-noto-serif font-normal">
-                                Serif-400
-                            </span>
-                            <span className="inline-flex w-1/2 sm:w-1/3 md:w-1/6 font-noto-serif font-medium">
-                                Serif-500
-                            </span>
-                            <span className="inline-flex w-1/2 sm:w-1/3 md:w-1/6 font-noto-serif font-semibold">
-                                Serif-600
-                            </span>
+                            {sampleSizes.secondThree().map(({ weight, name }) => (
+                                <span
+                                    className={`inline-flex w-1/2 sm:w-1/3 md:w-1/6 font-noto-serif font-${name}`}
+                                    key={`serif-${weight}`}
+                                >
+                                    Serif-{weight}
+                                </span>
+                            ))}
                         </div>
                         <div className="mt-2">
-                            <span className="inline-flex w-1/2 sm:w-1/3 md:w-1/6 font-noto-serif font-normal italic">
-                                Serif-400-italic
-                            </span>
-                            <span className="inline-flex w-1/2 sm:w-1/3 md:w-1/6 font-noto-serif font-medium italic">
-                                Serif-500-italic
-                            </span>
-                            <span className="inline-flex w-1/2 sm:w-1/3 md:w-1/6 font-noto-serif font-semibold italic">
-                                Serif-600-italic
-                            </span>
+                            {sampleSizes.secondThree().map(({ weight, name }) => (
+                                <span
+                                    className={`inline-flex w-1/2 sm:w-1/3 md:w-1/6 font-noto-serif font-${name} italic`}
+                                    key={`serif-${weight}-italic`}
+                                >
+                                    Serif-{weight}-italic
+                                </span>
+                            ))}
                         </div>
                     </div>
                 </details>
