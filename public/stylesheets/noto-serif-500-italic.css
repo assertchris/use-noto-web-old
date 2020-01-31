@@ -4,4 +4,5 @@
         url('/fonts/noto-serif-500-italic.woff') format('woff');
     font-weight: 500;
     font-style: italic;
+    font-display: auto;
 }

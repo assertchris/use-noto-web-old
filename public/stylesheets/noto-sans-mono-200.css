@@ -3,4 +3,5 @@
     src: url('/fonts/noto-sans-mono-200.woff2') format('woff2'), url('/fonts/noto-sans-mono-200.woff') format('woff');
     font-weight: 200;
     font-style: normal;
+    font-display: auto;
 }

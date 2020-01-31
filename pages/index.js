@@ -70,7 +70,7 @@ const Index = function() {
                 <details>
                     <summary>There are quite a few...</summary>
                     <div className="flex flex-row flex-wrap">
-                        <div className="mt-2 flex flex-col w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 xl:w-1/6">
+                        <div className="mt-2 flex flex-col w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5">
                             {sampleSizes.map(({ weight, name }) => (
                                 <div
                                     className={`flex w-full justify-center font-noto-sans-mono font-${name}`}
@@ -80,7 +80,7 @@ const Index = function() {
                                 </div>
                             ))}
                         </div>
-                        <div className="mt-2 flex flex-col w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 xl:w-1/6">
+                        <div className="mt-2 flex flex-col w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5">
                             {sampleSizes.map(({ weight, name }) => (
                                 <span
                                     className={`flex w-full justify-center font-noto-serif font-${name}`}
@@ -90,7 +90,7 @@ const Index = function() {
                                 </span>
                             ))}
                         </div>
-                        <div className="mt-2 flex flex-col w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 xl:w-1/6">
+                        <div className="mt-2 flex flex-col w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5">
                             {sampleSizes.map(({ weight, name }) => (
                                 <span
                                     className={`flex w-full justify-center font-noto-serif font-${name} italic`}
