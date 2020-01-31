@@ -84,7 +84,7 @@ const Index = function() {
             </code>
             <h2 className="text-xl font-semibold">Samples</h2>
             <div className="bg-gray-100 p-2">
-                <details open>
+                <details>
                     <summary>There are quite a few...</summary>
                     <div className="mt-2">
                         <div>
