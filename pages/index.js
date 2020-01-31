@@ -15,26 +15,6 @@ const sampleSizes = [
     { weight: 900, name: 'black' },
 ]
 
-Array.prototype.firstThree = function() {
-    return this.slice(0, 3)
-}
-
-Array.prototype.secondThree = function() {
-    return this.slice(3, 6)
-}
-
-Array.prototype.lastThree = function() {
-    return this.slice(6, 9)
-}
-
-Array.prototype.firstSix = function() {
-    return this.slice(0, 6)
-}
-
-Array.prototype.secondSix = function() {
-    return this.slice(3, 9)
-}
-
 const Index = function() {
     return (
         <Layout>
@@ -60,7 +40,7 @@ const Index = function() {
                                 @import <span className="text-blue-500">'{process.env.DOMAIN}/stylesheets/noto-sans-mono-{weight}.css'</span>;
                             </div>
                         )}
-                        {importSizes.secondThree().map(weight => 
+                        {importSizes.map(weight => 
                             <Fragment key={`serif-${weight}`}>
                                 <div className="whitespace-no-wrap">@import <span className="text-blue-500">'{process.env.DOMAIN}/stylesheets/noto-serif-{weight}.css'</span>;</div>
                                 <div className="whitespace-no-wrap">@import <span className="text-blue-500">'{process.env.DOMAIN}/stylesheets/noto-serif-{weight}-italic.css'</span>;</div>
@@ -89,31 +69,31 @@ const Index = function() {
             <div className="bg-gray-100 p-2">
                 <details>
                     <summary>There are quite a few...</summary>
-                    <div className="mt-2">
-                        <div>
+                    <div className="flex flex-row flex-wrap">
+                        <div className="mt-2 flex flex-col w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 xl:w-1/6">
                             {sampleSizes.map(({ weight, name }) => (
-                                <span
-                                    className={`inline-flex w-1/2 sm:w-1/3 md:w-1/6 font-noto-sans-mono font-${name}`}
+                                <div
+                                    className={`flex w-full justify-center font-noto-sans-mono font-${name}`}
                                     key={`sans-mono-${weight}`}
                                 >
                                     Sans-Mono-{weight}
-                                </span>
+                                </div>
                             ))}
                         </div>
-                        <div className="mt-2">
-                            {sampleSizes.secondThree().map(({ weight, name }) => (
+                        <div className="mt-2 flex flex-col w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 xl:w-1/6">
+                            {sampleSizes.map(({ weight, name }) => (
                                 <span
-                                    className={`inline-flex w-1/2 sm:w-1/3 md:w-1/6 font-noto-serif font-${name}`}
+                                    className={`flex w-full justify-center font-noto-serif font-${name}`}
                                     key={`serif-${weight}`}
                                 >
                                     Serif-{weight}
                                 </span>
                             ))}
                         </div>
-                        <div className="mt-2">
-                            {sampleSizes.secondThree().map(({ weight, name }) => (
+                        <div className="mt-2 flex flex-col w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 xl:w-1/6">
+                            {sampleSizes.map(({ weight, name }) => (
                                 <span
-                                    className={`inline-flex w-1/2 sm:w-1/3 md:w-1/6 font-noto-serif font-${name} italic`}
+                                    className={`flex w-full justify-center font-noto-serif font-${name} italic`}
                                     key={`serif-${weight}-italic`}
                                 >
                                     Serif-{weight}-italic

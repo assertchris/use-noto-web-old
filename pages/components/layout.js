@@ -23,6 +23,7 @@ const Layout = function({ children }) {
                 }
 
                 * + code,
+                * + details,
                 * + p,
                 * + h1,
                 * + h2,
