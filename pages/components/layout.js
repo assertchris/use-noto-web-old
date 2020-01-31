@@ -12,16 +12,21 @@ const Layout = function({ children }) {
             </Head>
             <div className="container mx-auto px-4">{children}</div>
             <style jsx global>{`
-                body {
+                body,
+                .font-noto-serif {
                     font-family: 'Noto Serif';
                 }
 
-                code {
+                code,
+                .font-noto-sans-mono {
                     font-family: 'Noto Sans Mono';
                 }
 
                 * + code,
-                * + p {
+                * + p,
+                * + h1,
+                * + h2,
+                * + h3 {
                     margin-top: 1rem;
                 }
             `}</style>

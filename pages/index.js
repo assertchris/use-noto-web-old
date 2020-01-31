@@ -21,6 +21,8 @@ const Index = function() {
                     </summary>
                     <div className="mt-2">
                         <div className="whitespace-no-wrap">@import <span className="text-blue-500">'{process.env.DOMAIN}/stylesheets/noto-sans-mono-400.css'</span>;</div>
+                        <div className="whitespace-no-wrap">@import <span className="text-blue-500">'{process.env.DOMAIN}/stylesheets/noto-sans-mono-500.css'</span>;</div>
+                        <div className="whitespace-no-wrap">@import <span className="text-blue-500">'{process.env.DOMAIN}/stylesheets/noto-sans-mono-600.css'</span>;</div>
                         <div className="whitespace-no-wrap">@import <span className="text-blue-500">'{process.env.DOMAIN}/stylesheets/noto-serif-400-italic.css'</span>;</div>
                         <div className="whitespace-no-wrap">@import <span className="text-blue-500">'{process.env.DOMAIN}/stylesheets/noto-serif-400.css'</span>;</div>
                         <div className="whitespace-no-wrap">@import <span className="text-blue-500">'{process.env.DOMAIN}/stylesheets/noto-serif-500-italic.css'</span>;</div>
@@ -46,6 +48,47 @@ const Index = function() {
                 <div className="ml-4">font-family: <span className="text-blue-500">'Noto Sans Mono'</span>;</div>
                 <div>{'}'}</div>
             </code>
+            <h2 className="text-xl font-semibold">Samples</h2>
+            <div className="bg-gray-100 p-2">
+                <details open>
+                    <summary>There are quite a few...</summary>
+                    <div className="mt-2">
+                        <div>
+                            <span className="inline-flex w-1/2 sm:w-1/3 md:w-1/6 font-noto-sans-mono font-normal">
+                                Mono-400
+                            </span>
+                            <span className="inline-flex w-1/2 sm:w-1/3 md:w-1/6 font-noto-sans-mono font-medium">
+                                Mono-500
+                            </span>
+                            <span className="inline-flex w-1/2 sm:w-1/3 md:w-1/6 font-noto-sans-mono font-semibold">
+                                Mono-600
+                            </span>
+                        </div>
+                        <div className="mt-2">
+                            <span className="inline-flex w-1/2 sm:w-1/3 md:w-1/6 font-noto-serif font-normal">
+                                Serif-400
+                            </span>
+                            <span className="inline-flex w-1/2 sm:w-1/3 md:w-1/6 font-noto-serif font-medium">
+                                Serif-500
+                            </span>
+                            <span className="inline-flex w-1/2 sm:w-1/3 md:w-1/6 font-noto-serif font-semibold">
+                                Serif-600
+                            </span>
+                        </div>
+                        <div className="mt-2">
+                            <span className="inline-flex w-1/2 sm:w-1/3 md:w-1/6 font-noto-serif font-normal italic">
+                                Serif-400-italic
+                            </span>
+                            <span className="inline-flex w-1/2 sm:w-1/3 md:w-1/6 font-noto-serif font-medium italic">
+                                Serif-500-italic
+                            </span>
+                            <span className="inline-flex w-1/2 sm:w-1/3 md:w-1/6 font-noto-serif font-semibold italic">
+                                Serif-600-italic
+                            </span>
+                        </div>
+                    </div>
+                </details>
+            </div>
         </Layout>
     )
 }
