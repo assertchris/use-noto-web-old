@@ -1,3 +1,4 @@
+import React from 'react'
 import Head from 'next/head'
 
 const Layout = function({ children }) {
@@ -6,10 +7,30 @@ const Layout = function({ children }) {
             <Head>
                 <title>Use Noto</title>
                 <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-                <link rel="stylesheet" href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" />
-                <link rel="stylesheet" href="/stylesheets/noto-sans.css" />
-                <link rel="stylesheet" href="/stylesheets/noto-sans-mono.css" />
-                <link rel="stylesheet" href="/stylesheets/noto-serif.css" />
+                <link
+                    rel="preload"
+                    href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
+                    as="style"
+                    onload="this.onload=null; this.rel='stylesheet'"
+                />
+                <link
+                    rel="preload"
+                    href="/stylesheets/noto-sans.css"
+                    as="style"
+                    onload="this.onload=null; this.rel='stylesheet'"
+                />
+                <link
+                    rel="preload"
+                    href="/stylesheets/noto-sans-mono.css"
+                    as="style"
+                    onload="this.onload=null; this.rel='stylesheet'"
+                />
+                <link
+                    rel="preload"
+                    href="/stylesheets/noto-serif.css"
+                    as="style"
+                    onload="this.onload=null; this.rel='stylesheet'"
+                />
             </Head>
             <div className="container mx-auto px-4">{children}</div>
             <style jsx global>{`
