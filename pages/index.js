@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
 import Layout from './components/layout'
 
-const importSizes = [100, 200, 300, 400, 500, 600]
+const importSizes = [100, 200, 300, 400, 500, 600, 700, 800, 900]
 
 const sampleSizes = [
     { weight: 100, name: 'hairline' },
@@ -10,6 +10,9 @@ const sampleSizes = [
     { weight: 400, name: 'normal' },
     { weight: 500, name: 'medium' },
     { weight: 600, name: 'semibold' },
+    { weight: 700, name: 'bold' },
+    { weight: 800, name: 'extrabold' },
+    { weight: 900, name: 'black' },
 ]
 
 Array.prototype.firstThree = function() {
@@ -52,7 +55,7 @@ const Index = function() {
                         There are quite a few...
                     </summary>
                     <div className="mt-2">
-                        {importSizes.firstSix().map(weight => 
+                        {importSizes.map(weight => 
                             <div className="whitespace-no-wrap" key={`sans-mono-${weight}`}>
                                 @import <span className="text-blue-500">'{process.env.DOMAIN}/stylesheets/noto-sans-mono-{weight}.css'</span>;
                             </div>
@@ -88,7 +91,7 @@ const Index = function() {
                     <summary>There are quite a few...</summary>
                     <div className="mt-2">
                         <div>
-                            {sampleSizes.firstSix().map(({ weight, name }) => (
+                            {sampleSizes.map(({ weight, name }) => (
                                 <span
                                     className={`inline-flex w-1/2 sm:w-1/3 md:w-1/6 font-noto-sans-mono font-${name}`}
                                     key={`sans-mono-${weight}`}
