@@ -17,7 +17,7 @@ const Index = function() {
             <code className="block bg-gray-100 p-2 text-sm overflow-x-auto">
                 <details>
                     <summary>
-                        There are quote a few...
+                        There are quite a few...
                     </summary>
                     <div className="mt-2">
                         <div className="whitespace-no-wrap">@import <span className="text-blue-500">'{process.env.DOMAIN}/stylesheets/noto-sans-mono-400.css'</span>;</div>
