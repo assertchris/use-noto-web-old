@@ -1,8 +1,8 @@
 @font-face {
-    font-family: 'Noto Sans';
+    font-family: 'Noto Sans Greek';
     src: url('/fonts/noto-sans-700.woff2') format('woff2'), url('/fonts/noto-sans-700.woff') format('woff');
     font-weight: 700;
     font-style: normal;
     font-display: auto;
-    unicode-range: U+0000-036F, U+0400-1EFF, U+2000-10FFFF;
+    unicode-range: U+0370-03FF, U+1F00-1FFF;
 }

@@ -5,5 +5,5 @@
     font-weight: 600;
     font-style: italic;
     font-display: auto;
-    unicode-range: U+0-10FFFF;
+    unicode-range: U+0000-036F, U+0400-1EFF, U+2000-10FFFF;
 }

@@ -48,6 +48,11 @@ const Index = function() {
                             )}
                             {importSizes.map(weight =>
                                 <div className="whitespace-no-wrap" key={`sans-hebrew-${weight}`}>
+                                    @import <span className="text-blue-500">'{process.env.DOMAIN}/stylesheets/noto-sans-greek-{weight}.css'</span>;
+                                </div>
+                            )}
+                            {importSizes.map(weight =>
+                                <div className="whitespace-no-wrap" key={`sans-hebrew-${weight}`}>
                                     @import <span className="text-blue-500">'{process.env.DOMAIN}/stylesheets/noto-sans-hebrew-{weight}.css'</span>;
                                 </div>
                             )}
@@ -64,6 +69,11 @@ const Index = function() {
                             )}
                             {importSizes.map(weight =>
                                 <div className="whitespace-no-wrap" key={`serif-hebrew-${weight}`}>
+                                    @import <span className="text-blue-500">'{process.env.DOMAIN}/stylesheets/noto-serif-greek-{weight}.css'</span>;
+                                </div>
+                            )}
+                            {importSizes.map(weight =>
+                                <div className="whitespace-no-wrap" key={`serif-hebrew-${weight}`}>
                                     @import <span className="text-blue-500">'{process.env.DOMAIN}/stylesheets/noto-serif-hebrew-{weight}.css'</span>;
                                 </div>
                             )}
@@ -74,9 +84,11 @@ const Index = function() {
                 {/* prettier-ignore */}
                 <code className="block bg-gray-100 p-2 text-sm overflow-x-auto">
                     <div className="whitespace-no-wrap">@import <span className="text-blue-500">'{process.env.DOMAIN}/stylesheets/noto-sans.css'</span>;</div>
+                    <div className="whitespace-no-wrap">@import <span className="text-blue-500">'{process.env.DOMAIN}/stylesheets/noto-sans-greek.css'</span>;</div>
                     <div className="whitespace-no-wrap">@import <span className="text-blue-500">'{process.env.DOMAIN}/stylesheets/noto-sans-hebrew.css'</span>;</div>
                     <div className="whitespace-no-wrap">@import <span className="text-blue-500">'{process.env.DOMAIN}/stylesheets/noto-sans-mono.css'</span>;</div>
                     <div className="whitespace-no-wrap">@import <span className="text-blue-500">'{process.env.DOMAIN}/stylesheets/noto-serif.css'</span>;</div>
+                    <div className="whitespace-no-wrap">@import <span className="text-blue-500">'{process.env.DOMAIN}/stylesheets/noto-serif-greek.css'</span>;</div>
                     <div className="whitespace-no-wrap">@import <span className="text-blue-500">'{process.env.DOMAIN}/stylesheets/noto-serif-hebrew.css'</span>;</div>
                 </code>
                 <p className="max-w-xl">Then, use the fonts in your CSS:</p>
@@ -90,6 +102,12 @@ const Index = function() {
                     <div>{'}'}</div>
                     <div className="mt-4">p {'{'}</div>
                     <div className="ml-4">font-family: <span className="text-blue-500">'Noto Serif'</span>;</div>
+                    <div>{'}'}</div>
+                    <div className="mt-4">.greek-sans {'{'}</div>
+                    <div className="ml-4">font-family: <span className="text-blue-500">'Noto Sans Greek'</span>, <span className="text-blue-500">'Noto Sans'</span>;</div>
+                    <div>{'}'}</div>
+                    <div className="mt-4">.greek-serif {'{'}</div>
+                    <div className="ml-4">font-family: <span className="text-blue-500">'Noto Serif Greek'</span>, <span className="text-blue-500">'Noto Serif'</span>;</div>
                     <div>{'}'}</div>
                     <div className="mt-4">.hebrew-sans {'{'}</div>
                     <div className="ml-4">font-family: <span className="text-blue-500">'Noto Sans Hebrew'</span>, <span className="text-blue-500">'Noto Sans'</span>;</div>
@@ -126,10 +144,20 @@ const Index = function() {
                             <div className="mt-2 flex flex-col w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5">
                                 {sampleSizes.map(({ weight, name }) => (
                                     <div
+                                        className={`flex w-full justify-center font-noto-sans-greek font-${name}`}
+                                        key={`sans-greek-${weight}`}
+                                    >
+                                        Sans-διαχωρίζω-{weight}
+                                    </div>
+                                ))}
+                            </div>
+                            <div className="mt-2 flex flex-col w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5">
+                                {sampleSizes.map(({ weight, name }) => (
+                                    <div
                                         className={`flex w-full justify-center font-noto-sans-hebrew font-${name}`}
                                         key={`sans-hebrew-${weight}`}
                                     >
-                                        {weight}-עברית-Sans
+                                        {weight}-להפריד-Sans
                                     </div>
                                 ))}
                             </div>
@@ -166,12 +194,28 @@ const Index = function() {
                             <div className="mt-2 flex flex-col w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5">
                                 {sampleSizes.map(({ weight, name }) => (
                                     <div
+                                        className={`flex w-full justify-center font-noto-serif-greek font-${name}`}
+                                        key={`serif-greek-${weight}`}
+                                    >
+                                        Serif-διαχωρίζω-{weight}
+                                    </div>
+                                ))}
+                            </div>
+                            <div className="mt-2 flex flex-col w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5">
+                                {sampleSizes.map(({ weight, name }) => (
+                                    <div
                                         className={`flex w-full justify-center font-noto-serif-hebrew font-${name}`}
                                         key={`serif-hebrew-${weight}`}
                                     >
-                                        {weight}-עברית-Serif
+                                        {weight}-להפריד-Serif
                                     </div>
                                 ))}
+                            </div>
+                            <div className="mt-2 flex w-full font-noto-sans-inverse justify-center">
+                                Sans English with serif Greek and Hebrew; διαχωρίζω and להפריד.
+                            </div>
+                            <div className="mt-2 flex w-full font-noto-serif-inverse justify-center">
+                                Serif English with sans Greek and Hebrew; διαχωρίζω and להפריד.
                             </div>
                         </div>
                     </details>
